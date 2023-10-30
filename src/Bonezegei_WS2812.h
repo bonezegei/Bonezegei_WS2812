@@ -1,4 +1,4 @@
-*
+/*
   This Library is written for WS2812
   Author: Bonezegei (Jofel Batutay)
   Date : October 2023
