@@ -25,17 +25,25 @@ public:
 
   void setPixel(uint32_t color);
 
+  //set pixel and send to the WS2812
   void setPixel(int index, uint32_t color);
 
+  //set pixel without sending to the WS2812
+  void _setPixel(int index, uint32_t color);
+
+  // write the actual NZR to WS2812
+  void display();
+
+  //replaced with fill
   void clear();
 
-  //fill all LED 
+  //fill all LED
   void fill(uint32_t color);
 
   rmt_obj_t* rmt_send = NULL;
 
   rmt_data_t* led_data;
-  
+
   int _pin;
   int _row;
   int _col;
