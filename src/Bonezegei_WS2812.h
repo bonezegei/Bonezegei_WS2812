@@ -31,6 +31,9 @@ public:
   //set pixel without sending to the WS2812
   void _setPixel(int index, uint32_t color);
 
+  //set pixel in WS2812 Matrix
+  void setPixel(int x, int y, uint32_t color);
+
   // write the actual NZR to WS2812
   void display();
 
