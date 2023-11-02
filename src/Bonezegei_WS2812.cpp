@@ -117,7 +117,7 @@ void Bonezegei_WS2812::setPixel(int x, int y, uint32_t color) {
 void Bonezegei_WS2812::display() {
   rmtWrite(rmt_send, led_data, _led_rmt);
   digitalWrite(_pin, LOW);
-  delayMicroseconds(70);
+  delay(5);
 }
 
 void Bonezegei_WS2812::clear() {
