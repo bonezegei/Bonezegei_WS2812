@@ -1,3 +1,4 @@
+#include "esp32-hal.h"
 /*
   This Library is written for WS2812
   Author: Bonezegei (Jofel Batutay)
@@ -5,6 +6,7 @@
   RGB LED Controller
 */
 #include "Bonezegei_WS2812.h"
+
 
 Bonezegei_WS2812::Bonezegei_WS2812(int pin) {
   _pin = pin;
@@ -107,8 +109,15 @@ void Bonezegei_WS2812::_setPixel(int index, uint32_t color) {
   }
 }
 
+//set pixel in WS2812 Matrix
+void Bonezegei_WS2812::setPixel(int x, int y, uint32_t color) {
+  _setPixel((int)((x * _col) + y), color);
+}
+
 void Bonezegei_WS2812::display() {
   rmtWrite(rmt_send, led_data, _led_rmt);
+  digitalWrite(_pin, LOW);
+  delayMicroseconds(70);
 }
 
 void Bonezegei_WS2812::clear() {
@@ -126,4 +135,7 @@ void Bonezegei_WS2812::fill(uint32_t color) {
     _setPixel(a, color);
   }
   rmtWrite(rmt_send, led_data, _led_rmt);
+  digitalWrite(_pin, LOW);
+  delayMicroseconds(100);
+  //delay(50);
 }
