@@ -1,5 +1,5 @@
 # Bonezegei_WS2812
-Arduino Library for RGB LED
+### Arduino Library for RGB LED
 
 Bonezegei WS2812 is an Arduino library for controlling WS2812 or WS2812B RGB LED strips, single LEDs, or matrices. WS2812 LEDs are addressable LEDs that have an integrated circuit inside each LED, allowing them to communicate via a one-wire interface (Bonezegei, 2023). This library supports the ESP32 architecture and provides functions to set the color, brightness, and effects of the LEDs. 
 
